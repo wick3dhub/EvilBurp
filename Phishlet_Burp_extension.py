@@ -45,9 +45,9 @@ class BurpExtender(IBurpExtender, IContextMenuFactory, IHttpListener):
                     "triggers_on": self.last_domain,
                     "orig_sub": self.last_domain,
                     "domain": self.last_domain,
-                    "search": "something_to_look_for",
-                    "replace": "replace_it_with_this",
-                    "mimes": ["text/html"]
+                    "search": "https://{hostname}",
+                    "replace": "https://{hostname}",
+                    "mimes": ["text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript"]
                 }
             ],
             "auth_tokens": [
@@ -70,7 +70,7 @@ class BurpExtender(IBurpExtender, IContextMenuFactory, IHttpListener):
             },
             "login": {
                 "domain": self.last_domain,
-                "path": "/evilginx-mastery"
+                "path": "/"
             }
         }
 
